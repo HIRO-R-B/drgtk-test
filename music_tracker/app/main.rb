@@ -1,7 +1,7 @@
 require "lib/music_tracker/music_tracker.rb"
 
 def tick args
-  MusicTracker.instance_variable_set "@active", true if args.tick_count.zero?
+  MusicTracker.instance_variable_set("@active", true) if args.tick_count.zero?
   return if MusicTracker.tick args
 
   args.outputs.labels  << [640, 500, 'Hello World!', 5, 1]
